@@ -2,9 +2,28 @@ import React from 'react';
 import EnhancedStartupFunnel from './components/charts/EnhancedStartupFunnel';
 import EnhancedMarketShareFramework from './components/charts/EnhancedMarketShareFramework';
 import EnhancedSuccessFactorComparison from './components/charts/EnhancedSuccessFactorComparison';
+import FunnelPage from './components/pages/FunnelPage';
+import FrameworkPage from './components/pages/FrameworkPage';
+import FactorsPage from './components/pages/FactorsPage';
 import './App.css';
 
 function App() {
+  const path = window.location.pathname;
+  
+  // Check if we're on one of the specific chart paths
+  if (path === '/funnel') {
+    return <FunnelPage />;
+  }
+  
+  if (path === '/framework') {
+    return <FrameworkPage />;
+  }
+  
+  if (path === '/factors') {
+    return <FactorsPage />;
+  }
+  
+  // Default full site with all charts
   return (
     <div className="App">
       <header className="App-header">

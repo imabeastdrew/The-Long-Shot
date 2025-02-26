@@ -9,20 +9,18 @@
   ],
   "routes": [
     { "handle": "filesystem" },
+    { "src": "/funnel", "dest": "/index.html" },
+    { "src": "/framework", "dest": "/index.html" },
+    { "src": "/factors", "dest": "/index.html" },
     { "src": "/.*", "dest": "/index.html" }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "X-Frame-Options",
-          "value": "ALLOW-FROM https://coda.io"
-        },
-        {
-          "key": "Content-Security-Policy",
-          "value": "frame-ancestors 'self' https://coda.io"
-        }
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Content-Security-Policy", "value": "frame-ancestors *" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
       ]
     }
   ]

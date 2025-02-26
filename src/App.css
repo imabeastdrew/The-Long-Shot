@@ -33,4 +33,22 @@
   padding: 1rem 0;
   color: #6c757d;
   border-top: 1px solid #e9ecef;
+}
+
+.chart-only-container {
+  padding: 1rem;
+  max-width: 100%;
+  background-color: white;
+}
+
+.standalone-chart {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 } 

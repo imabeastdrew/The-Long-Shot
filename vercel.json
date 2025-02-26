@@ -8,11 +8,26 @@
     }
   ],
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/funnel", "dest": "/index.html" },
-    { "src": "/framework", "dest": "/index.html" },
-    { "src": "/factors", "dest": "/index.html" },
-    { "src": "/.*", "dest": "/index.html" }
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/logo.svg",
+      "dest": "/logo.svg"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ],
   "headers": [
     {

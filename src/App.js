@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import EnhancedStartupFunnel from './components/charts/EnhancedStartupFunnel';
 import EnhancedMarketShareFramework from './components/charts/EnhancedMarketShareFramework';
 import EnhancedSuccessFactorComparison from './components/charts/EnhancedSuccessFactorComparison';
@@ -7,23 +8,7 @@ import FrameworkPage from './components/pages/FrameworkPage';
 import FactorsPage from './components/pages/FactorsPage';
 import './App.css';
 
-function App() {
-  const path = window.location.pathname;
-  
-  // Check if we're on one of the specific chart paths
-  if (path === '/funnel') {
-    return <FunnelPage />;
-  }
-  
-  if (path === '/framework') {
-    return <FrameworkPage />;
-  }
-  
-  if (path === '/factors') {
-    return <FactorsPage />;
-  }
-  
-  // Default full site with all charts
+function MainApp() {
   return (
     <div className="App">
       <header className="App-header">
@@ -50,6 +35,19 @@ function App() {
         <p>© {new Date().getFullYear()} The Long Shot</p>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/funnel" element={<FunnelPage />} />
+        <Route path="/framework" element={<FrameworkPage />} />
+        <Route path="/factors" element={<FactorsPage />} />
+        <Route path="/" element={<MainApp />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,3 +1,167 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
+
+:root {
+  /* Typographic scale - base values */
+  --ds-type-scale-base: 1rem; /* 16px */
+  --ds-type-scale-ratio: 1.125; /* Major Second scale */
+
+  /* Modular scale (-3 to 13) */
+  --ds-type-scale--3: 0.702rem; /* 11.237px */
+  --ds-type-scale--2: 0.79rem; /* 12.642px */
+  --ds-type-scale--1: 0.889rem; /* 14.222px */
+  --ds-type-scale-0: 1rem; /* 16px */
+  --ds-type-scale-1: 1.125rem; /* 18px */
+  --ds-type-scale-2: 1.266rem; /* 20.25px */
+  --ds-type-scale-3: 1.424rem; /* 22.781px */
+  --ds-type-scale-4: 1.602rem; /* 25.629px */
+  --ds-type-scale-5: 1.802rem; /* 28.833px */
+  --ds-type-scale-6: 2.027rem; /* 32.437px */
+  --ds-type-scale-7: 2.281rem; /* 36.491px */
+  --ds-type-scale-8: 2.566rem; /* 41.053px */
+  --ds-type-scale-9: 2.887rem; /* 46.184px */
+  --ds-type-scale-10: 3.247rem; /* 51.957px */
+  --ds-type-scale-11: 3.653rem; /* 58.452px */
+  --ds-type-scale-12: 4.110rem; /* 65.758px */
+  --ds-type-scale-13: 4.624rem; /* 73.978px */
+
+  /* Leading (line-height) */
+  --ds-type-leading-lower: 1.4;
+  --ds-type-leading-upper: 1.2;
+  --ds-type-leading-border-link: 1.125; /* custom value for non-wrapping links */
+
+  /* Type families */
+  --ds-type-system-serif: 'MiloTE', 'MiloTESec', Charter, 'Bitstream Charter', 'Iowan Old Style', 'Calisto MT', serif;
+  --ds-type-system-serif-smallcaps: 'MiloTESC', var(--ds-type-system-serif);
+  --ds-type-system-sans: 'EconSansOS', 'EconSansOSSec', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --ds-type-system-sans-smallcaps: 'EconSansSC', var(--ds-type-system-sans);
+  --ds-type-system-sans-condensed: 'EconSansCnd', 'EconSansCndSec', 'Arial Narrow', var(--ds-type-system-sans);
+  --ds-type-system-sans-lining: 'EconSansLin', var(--ds-type-system-sans);
+  --ds-type-system-simplified-chinese: 'PingFang SC', 'Heiti SC', 'Noto Sans CJK', 'DengXian', 'Microsoft JhengHei UI', system-ui, sans-serif;
+  --ds-type-system-symbols: 'EcoPict';
+}
+
+/* Helper classes for font families */
+.serif {
+  font-family: var(--ds-type-system-serif);
+}
+
+.serif-smallcaps {
+  font-family: var(--ds-type-system-serif-smallcaps);
+}
+
+.sans {
+  font-family: var(--ds-type-system-sans);
+}
+
+.sans-smallcaps {
+  font-family: var(--ds-type-system-sans-smallcaps);
+}
+
+.sans-condensed {
+  font-family: var(--ds-type-system-sans-condensed);
+}
+
+.sans-lining {
+  font-family: var(--ds-type-system-sans-lining);
+}
+
+.chinese {
+  font-family: var(--ds-type-system-simplified-chinese);
+}
+
+.symbols {
+  font-family: var(--ds-type-system-symbols);
+}
+
+/* Helper classes for type scale */
+.text-3xs {
+  font-size: var(--ds-type-scale--3);
+  line-height: var(--ds-type-leading-lower);
+}
+
+.text-2xs {
+  font-size: var(--ds-type-scale--2);
+  line-height: var(--ds-type-leading-lower);
+}
+
+.text-xs {
+  font-size: var(--ds-type-scale--1);
+  line-height: var(--ds-type-leading-lower);
+}
+
+.text-base {
+  font-size: var(--ds-type-scale-0);
+  line-height: var(--ds-type-leading-lower);
+}
+
+.text-sm {
+  font-size: var(--ds-type-scale-1);
+  line-height: var(--ds-type-leading-lower);
+}
+
+.text-md {
+  font-size: var(--ds-type-scale-2);
+  line-height: var(--ds-type-leading-lower);
+}
+
+.text-lg {
+  font-size: var(--ds-type-scale-3);
+  line-height: var(--ds-type-leading-upper);
+}
+
+.text-xl {
+  font-size: var(--ds-type-scale-4);
+  line-height: var(--ds-type-leading-upper);
+}
+
+.text-2xl {
+  font-size: var(--ds-type-scale-5);
+  line-height: var(--ds-type-leading-upper);
+}
+
+.text-3xl {
+  font-size: var(--ds-type-scale-6);
+  line-height: var(--ds-type-leading-upper);
+}
+
+.text-4xl {
+  font-size: var(--ds-type-scale-7);
+  line-height: var(--ds-type-leading-upper);
+}
+
+.text-5xl {
+  font-size: var(--ds-type-scale-8);
+  line-height: var(--ds-type-leading-upper);
+}
+
+.text-6xl {
+  font-size: var(--ds-type-scale-9);
+  line-height: var(--ds-type-leading-upper);
+}
+
+.text-7xl {
+  font-size: var(--ds-type-scale-10);
+  line-height: var(--ds-type-leading-upper);
+}
+
+.text-8xl {
+  font-size: var(--ds-type-scale-11);
+  line-height: var(--ds-type-leading-upper);
+}
+
+.text-9xl {
+  font-size: var(--ds-type-scale-12);
+  line-height: var(--ds-type-leading-upper);
+}
+
+.text-10xl {
+  font-size: var(--ds-type-scale-13);
+  line-height: var(--ds-type-leading-upper);
+}
+
+/* Border link style (non-wrapping links) */
+.border-link {
+  line-height: var(--ds-type-leading-border-link);
+} 
